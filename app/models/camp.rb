@@ -24,7 +24,7 @@ class Camp < ApplicationRecord
       create_item (board_id: 3536260889, item_name: $myItemName, column_values: $columnVals) {
         id
       }
-    }'  
+    }'
 
     vars = {
       myItemName: "#{self.parent_first_name} #{self.parent_last_name}",
