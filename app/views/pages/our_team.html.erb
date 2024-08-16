@@ -5,35 +5,43 @@
 
 <%= render "shared/header"%>
 
-<section class="flex flex-col h-screen-3/4 bg-gradient-to-t from-amber-50 to-white lg:bg-about-us bg-cover bg-center lg:justify-end justify-center items-center text-black"  x-data="">
-  <hr
-    class=" lg:hidden bg-custom-50 pt-1 border-0 w-3/4 mb-12 opacity-0 transition-all duration-[1200ms] -translate-y-4"
-    x-intersect="$el.classList.add('opacity-100', 'translate-y-4', 'z-0')"
-    />
-  
-  <div class="text-4xl font-bold text-center">Come See What Everyone's Talking About</div>
+<section class="flex relative flex-col h-screen-3/4 justify-end items-center text-black"  x-data="">
+  <div class="absolute w-full h-full z-0 bg-gradient-to-t from-white via-amber-50/90 md:via-amber-50/50"></div>
+  <div class="absolute w-full h-full inset-0 -z-10 flex flex-wrap lg:flex-nowrap overflow-hidden group">
+      <%= image_tag "sun-city-team-georgette.webp", class:"w-1/2 md:w-1/2 lg:w-1/5 object-cover h-full animate-slow-zoom", alt: "Sun City Team In Front of Sea Plane"%>
+      <%= image_tag "sun-city-team-cris.webp", class:"w-1/2 hidden lg:block md:w-1/3 lg:w-1/5 object-cover h-full animate-slow-zoom", alt: "Sun City Team In Front of Sea Plane"%>
+      <%= image_tag "sun-city-team-luke.webp", class:"w-1/2 order-first lg:order-none md:w-1/2 lg:w-1/5 object-cover h-full animate-slow-zoom", alt: "Sun City Team In Front of Sea Plane"%>
+      <%= image_tag "sun-city-team-joe.webp", class:"w-1/2 hidden lg:block md:w-1/3 lg:w-1/5 object-cover h-full animate-slow-zoom", alt: "Sun City Team In Front of Sea Plane"%>
+      <%= image_tag "sun-city-team-paul.webp", class:"w-1/2 hidden lg:block md:w-1/3 lg:w-1/5 object-cover h-full animate-slow-zoom", alt: "Sun City Team In Front of Sea Plane"%>
+    </div>
+    <div class="mb-0 flex flex-col justify-end items-center">
+      <hr
+        class=" lg:hidden bg-custom-50 pt-1 border-0 w-3/4 mb-12 opacity-0 transition-all duration-[1200ms] -translate-y-4"
+        x-intersect="$el.classList.add('opacity-100', 'translate-y-4', 'z-0')"
+        />
+      
+      <div class="text-4xl z-10 font-bold text-center">Come See What Everyone's Talking About</div>
 
-  <div class="max-w-2xl mx-auto">
+      <div class="max-w-2xl z-10 mx-auto">
 
-    <h2 class="pt-5 lg:px-0 font-serif italic text-xl text-center">
-      We train professional, safe, and proficient pilots, who will excel in aviation
-    </h2>
+        <h2 class="pt-5 lg:px-0 font-serif italic text-xl text-center">
+          We train professional, safe, and proficient pilots, who will excel in aviation
+        </h2>
 
-  </div>
-  
-  <%= link_to "SAY HELLO", contact_path, data: { turbo: false }, class: "btn-primary  mb-10 mt-5" %>
+      </div>
+      
+      <%= link_to "SAY HELLO", contact_path, data: { turbo: false }, class: "btn-primary  mb-10 mt-5" %>
 
-  <hr
-    class="lg:hidden bg-custom-50 h-1 w-3/4 mt-10 mb-10 opacity-0 transition-all duration-[1200ms] translate-y-9"
-    x-intersect="$el.classList.add('opacity-100', '-translate-y-0', 'z-0')"
-    />
+      <hr
+        class="lg:hidden bg-custom-50 h-1 w-3/4 mt-10 mb-10 opacity-0 transition-all duration-[1200ms] translate-y-9"
+        x-intersect="$el.classList.add('opacity-100', '-translate-y-9', 'z-0')"
+      />
+
+    </div>
 </section>
 
-<div class="lg:hidden">
-  <%= image_tag "sun-city-about-us-background-no-fade.webp"%>
-</div>
 
-<section class="bg-white flex flex-col items-center">
+<section class="bg-white py-16 flex flex-col items-center">
   <div class="max-w-4xl">
     <ol class="items-center lg:flex ">
       <li class="relative mb-6 lg:mb-0 mt-10 ">
@@ -181,15 +189,15 @@
         <%= image_tag "sun-city-team-georgette.webp", class: "lg:rounded-t-2xl", alt: "Georgette Poulos, Office Manager"%> 
         <div class="bg-neutral-800 text-white lg:rounded-b-2xl flex flex-col items-center flex-grow">
           <p class="text-2xl font-semibold pt-5">Georgette Poulos</p>
-          <p class="italic font-serif">Office Manager</p>
+          <p class="italic font-serif">Executive Business Manager</p>
           <p class="px-5 py-5">
-            Georgette holds a bachelor's degree in Alternative Medicine and is a graduate of culinary school, but she is no stranger to aviation. Being married to a pilot for 28 years and having two pilots for children, she is well versed in the aviation field. Georgette is Sun City's office manager and is presently pursuing a bachelor's degree in aerospace management. 
+            Georgette holds a bachelor's degree in Alternative Medicine and is a graduate of culinary school, but she is no stranger to aviation. Being married to a pilot for 28 years and having two pilots for children, she is well versed in the aviation field. Georgette is Sun City's executive business manager and is presently pursuing a bachelor's degree in aerospace management. 
           </p>
         </div>
       </div>
     </div>
 
-    <ol class="items-center lg:flex flex-grow pb-5">
+    <ol class="items-center mt-16 lg:flex flex-grow pb-5">
       <li class="mb-6 lg:mb-0 mt-10 w-full"> <!-- Added 'w-full' class to the li element -->
         <div class="flex items-center justify-center lg:justify-start">
           <h2 class="text-3xl font-bold lg:pb-3 w-full text-center lg:text-end"> <!-- Added 'w-full' class to the h2 element -->
@@ -200,69 +208,69 @@
       </li>
     </ol>
 
-    <div class="grid gap-8 lg:gap-16 sm:grid-cols-2 lg:grid-cols-3 ">
-      <div class="text-center text-slate-500 dark:text-slate-400">
-        <%= image_tag "sun-city-team-123abc2.webp", class: "mx-auto mb-4 w-56 h-56 rounded-full", alt: "Jean Dorcelien"%>
-        <h3 class="mb-1 text-2xl font-bold tracking-tight text-slate-900 ">
+    <div class="grid gap-8 lg:gap-16 mb-24 sm:grid-cols-2 lg:grid-cols-3 ">
+      <div class="text-center text-slate-500 dark:text-slate-400 group">
+        <%= image_tag "sun-city-team-123abc2.webp", class: "mx-auto mb-4 w-56 h-56 rounded-full group-hover:scale-105 group-hover:shadow-lg group-hover:brightness-110 duration-300 ease-out", alt: "Jean Dorcelien"%>
+        <h3 class="text-2xl font-bold tracking-tight text-slate-900 group-hover:scale-105 duration-200 delay-100">
             Jean Dorcelien
         </h3>
-        <p>Flight Instructor</p>
+        <p class="group-hover:-translate-y-1 duration-300 delay-100">Flight Instructor</p>
       </div>
-      <div class="text-center text-slate-500 dark:text-slate-400">
-        <%= image_tag "sun-city-team-123abc5.webp", class: "mx-auto mb-4 w-56 h-56 rounded-full", alt: "Nicolas McCaulsky"%>
-        <h3 class="mb-1 text-2xl font-bold tracking-tight text-slate-900 ">
+      <div class="text-center text-slate-500 dark:text-slate-400 group">
+        <%= image_tag "sun-city-team-123abc5.webp", class: "mx-auto mb-4 w-56 h-56 rounded-full group-hover:scale-105 group-hover:shadow-lg group-hover:brightness-110 duration-300 ease-out", alt: "Nicolas McCaulsky"%>
+        <h3 class="text-2xl font-bold tracking-tight text-slate-900 group-hover:scale-105 duration-200 delay-100">
             Nicolas McCaulsky
         </h3>
-        <p>Flight Instructor</p>
+        <p class="group-hover:-translate-y-1 duration-300 delay-100">Flight Instructor</p>
       </div>
-      <div class="text-center text-slate-500 dark:text-slate-400">
-        <%= image_tag "sun-city-team-123abc6.webp", class: "mx-auto mb-4 w-56 h-56 rounded-full", alt: "Gleb Sokolov"%>
-        <h3 class="mb-1 text-2xl font-bold tracking-tight text-slate-900 ">
+      <div class="text-center text-slate-500 dark:text-slate-400 group">
+        <%= image_tag "sun-city-team-123abc6.webp", class: "mx-auto mb-4 w-56 h-56 rounded-full group-hover:scale-105 group-hover:shadow-lg group-hover:brightness-110 duration-300 ease-out", alt: "Gleb Sokolov"%>
+        <h3 class="text-2xl font-bold tracking-tight text-slate-900 group-hover:scale-105 duration-200 delay-100">
             Gleb Sokolov
         </h3>
-        <p>Flight Instructor</p>
+        <p class="group-hover:-translate-y-1 duration-300 delay-100">Flight Instructor</p>
       </div>
-      <div class="text-center text-slate-500 dark:text-slate-400">
-        <%= image_tag "sun-city-team-mafer.webp", class: "mx-auto mb-4 w-56 h-56 rounded-full", alt: "Mafer Caceres"%>
-        <h3 class="mb-1 text-2xl font-bold tracking-tight text-slate-900 ">
+      <div class="text-center text-slate-500 dark:text-slate-400 group">
+        <%= image_tag "sun-city-team-mafer.webp", class: "mx-auto mb-4 w-56 h-56 rounded-full group-hover:scale-105 group-hover:shadow-lg group-hover:brightness-110 duration-300 ease-out", alt: "Mafer Caceres"%>
+        <h3 class="text-2xl font-bold tracking-tight text-slate-900 group-hover:scale-105 duration-200 delay-100">
             Mafer Caceres
         </h3>
-        <p>Dispatch Administrator<br>Social Media Specialist</p>
+        <p class="group-hover:-translate-y-1 duration-300 delay-100">Dispatch Administrator<br>Social Media Specialist</p>
       </div>
-      <div class="text-center text-slate-500 dark:text-slate-400">
-        <%= image_tag "woman-silhouette.webp", class: "mx-auto mb-4 w-56 h-56 rounded-full", alt: "Mafer Caceres"%>
-        <h3 class="mb-1 text-2xl font-bold tracking-tight text-slate-900 ">
+      <div class="text-center text-slate-500 dark:text-slate-400 group">
+        <%= image_tag "woman-silhouette.webp", class: "mx-auto mb-4 w-56 h-56 rounded-full group-hover:scale-105 group-hover:shadow-lg group-hover:brightness-110 duration-300 ease-out", alt: "Mafer Caceres"%>
+        <h3 class="text-2xl font-bold tracking-tight text-slate-900 group-hover:scale-105 duration-200 delay-100">
             Cara Ming
         </h3>
-        <p>Flight Instructor</p>
+        <p class="group-hover:-translate-y-1 duration-300 delay-100">Flight Instructor</p>
       </div>
-      <div class="text-center text-slate-500 dark:text-slate-400">
-        <%= image_tag "sun-city-team-marko.webp", class: "mx-auto mb-4 w-56 h-56 rounded-full", alt: "Mafer Caceres"%>
-        <h3 class="mb-1 text-2xl font-bold tracking-tight text-slate-900 ">
+      <div class="text-center text-slate-500 dark:text-slate-400 group">
+        <%= image_tag "sun-city-team-marko.webp", class: "mx-auto mb-4 w-56 h-56 rounded-full group-hover:scale-105 group-hover:shadow-lg group-hover:brightness-110 duration-300 ease-out", alt: "Mafer Caceres"%>
+        <h3 class="text-2xl font-bold tracking-tight text-slate-900 group-hover:scale-105 duration-200 delay-100">
             Marko Pavlichenko
         </h3>
-        <p>Flight Instructor</p>
+        <p class="group-hover:-translate-y-1 duration-300 delay-100">Flight Instructor</p>
       </div>
-      <div class="text-center text-slate-500 dark:text-slate-400">
-        <%= image_tag "sun-city-team-alexis.webp", class: "mx-auto mb-4 w-56 h-56 rounded-full", alt: "Mafer Caceres"%>
-        <h3 class="mb-1 text-2xl font-bold tracking-tight text-slate-900 ">
+      <div class="text-center text-slate-500 dark:text-slate-400 group">
+        <%= image_tag "sun-city-team-alexis.webp", class: "mx-auto mb-4 w-56 h-56 rounded-full group-hover:scale-105 group-hover:shadow-lg group-hover:brightness-110 duration-300 ease-out", alt: "Mafer Caceres"%>
+        <h3 class="text-2xl font-bold tracking-tight text-slate-900 group-hover:scale-105 duration-200 delay-100">
             Alexis Vassel
         </h3>
-        <p>Flight Instructor</p>
+        <p class="group-hover:-translate-y-1 duration-300 delay-100">Flight Instructor</p>
       </div>
-      <div class="text-center text-slate-500 dark:text-slate-400">
-        <%= image_tag "sun-city-team-charles.webp", class: "mx-auto mb-4 w-56 h-56 rounded-full", alt: "Mafer Caceres"%>
-        <h3 class="mb-1 text-2xl font-bold tracking-tight text-slate-900 ">
+      <div class="text-center text-slate-500 dark:text-slate-400 group">
+        <%= image_tag "sun-city-team-charles.webp", class: "mx-auto mb-4 w-56 h-56 rounded-full group-hover:scale-105 group-hover:shadow-lg group-hover:brightness-110 duration-300 ease-out", alt: "Mafer Caceres"%>
+        <h3 class="text-2xl font-bold tracking-tight text-slate-900 group-hover:scale-105 duration-200 delay-100">
             Charles Mesina
         </h3>
-        <p>Flight Instructor</p>
+        <p class="group-hover:-translate-y-1 duration-300 delay-100">Flight Instructor</p>
       </div>
-      <div class="text-center text-slate-500 dark:text-slate-400">
-        <%= image_tag "man-silhouette.webp", class: "mx-auto mb-4 w-56 h-56 rounded-full", alt: "Mafer Caceres"%>
-        <h3 class="mb-1 text-2xl font-bold tracking-tight text-slate-900 ">
+      <div class="text-center text-slate-500 dark:text-slate-400 group">
+        <%= image_tag "man-silhouette.webp", class: "mx-auto mb-4 w-56 h-56 rounded-full group-hover:scale-105 group-hover:shadow-lg group-hover:brightness-110 duration-300 ease-out", alt: "Mafer Caceres"%>
+        <h3 class="text-2xl font-bold tracking-tight text-slate-900 group-hover:scale-105 duration-200 delay-100">
             Andrew Graeler
         </h3>
-        <p>Flight Instructor</p>
+        <p class="group-hover:-translate-y-1 duration-300 delay-100">Flight Instructor</p>
       </div>
     </div>  
   </div>

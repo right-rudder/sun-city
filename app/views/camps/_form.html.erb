@@ -21,7 +21,10 @@
     </div>
   <% end %>
 
-  <div class="my-5" x-data="{ selectedDates: [] }">
+
+  <div class="my-5" x-data="{ selectedDates: 'TBD' }">
+<%
+=begin%>
     <%= form.label "Intended Enrollment Date", class: "font-semibold text-xl capitalize" %><span class="text-sm">*</span>
     <% camp_dates = ["6-20-2024 to 6-22-2024", "6-28-2024 to 6-29-2024", "8-1-2024 to 8-3-2024"] %>
     <div class="grid lg:grid-cols-2 grid-cols-1 pt-2">
@@ -32,9 +35,10 @@
         </div>
       <% end %>
     </div>
-    <%= form.hidden_field :camp_date, "x-bind:value": "selectedDates.join(', ')" %>
+<%
+=end%>
+    <%= form.hidden_field :camp_date, "x-bind:value": "selectedDates" %>
   </div>
-
 
   <div class="mt-5">
     <p class="font-semibold text-xl">Attendee Information</p>
