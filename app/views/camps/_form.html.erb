@@ -22,21 +22,17 @@
   <% end %>
 
 
-  <div class="my-5" x-data="{ selectedDates: 'TBD' }">
-<%
-=begin%>
+  <div class="my-5" x-data="{ selectedDates: [] }">
     <%= form.label "Intended Enrollment Date", class: "font-semibold text-xl capitalize" %><span class="text-sm">*</span>
-    <% camp_dates = ["6-20-2024 to 6-22-2024", "6-28-2024 to 6-29-2024", "8-1-2024 to 8-3-2024"] %>
+    <% camp_dates = ["12-20-2024 to 12-22-2024 Basic", "12-20-2024 to 12-22-2024 Advanced"] %>
     <div class="grid lg:grid-cols-2 grid-cols-1 pt-2">
       <% camp_dates.each do |date_range| %>
         <div class="flex items-center">
           <input type="checkbox" x-model="selectedDates" value="<%= date_range %>" class="text-custom-50">
-          <%= form.label date_range, class: "ml-2 text-neutral-700" %>
+          <%= form.label date_range, class: "ml-2 capitalize text-neutral-700" %>
         </div>
       <% end %>
     </div>
-<%
-=end%>
     <%= form.hidden_field :camp_date, "x-bind:value": "selectedDates" %>
   </div>
 
@@ -57,7 +53,7 @@
 
   <div class="mb-5">
     <%= form.label "Attendee Age*", class: "font-semibold text-sm text-neutral-600" %>
-    <%= form.number_field :attendee_age, class: "block shadow rounded-md border border-gray-200 focus:border-custom-50 focus:ring-custom-50 outline-none px-3 py-2 mt-2 w-28", min: 8, max: 18 %>
+    <%= form.number_field :attendee_age, class: "block shadow rounded-md border border-gray-200 focus:border-custom-50 focus:ring-custom-50 outline-none px-3 py-2 mt-2 w-28", min: 14, max: 18 %>
   </div>
 
   <div class="mt-5">
