@@ -76,7 +76,7 @@ Rails.application.routes.draw do
   get 'private-pilot-training', to: 'pages#private_pilot', as: :private_pilot
   get 'certified-flight-instructor-cfi', to: 'pages#cfi', as: :cfi
   get 'airline-transport-pilot-atp', to: 'pages#atp', as: :atp
-  #get 'seaplane-pilot-training', to: 'pages#seaplane', as: :seaplane
+  get 'seaplane-pilot-training', to: 'pages#seaplane', as: :seaplane
   get 'flight-review-bfr', to: 'pages#bfr', as: :bfr
   get 'instrument-proficiency-check-ipc', to: 'pages#ipc', as: :ipc
   get 'wingman-family-member-training', to: 'pages#wingman', as: :wingman
