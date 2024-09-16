@@ -32,10 +32,10 @@ https://tailwindcomponents.com/component/animated-hamburger-menu-icon
       <div class="flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-500 origin-center overflow-hidden"
            x-bind:class="open ? 'rotate-180' : ''">
         <div class="bg-custom-50 h-[2px] w-7 transform transition-all duration-500"
-             x-bind:class="open ? '-rotate-45 -translate-x-1' : ''"></div>
+             x-bind:class="open ? 'rotate-45 -translate-x-1' : ''"></div>
         <div class="bg-custom-50 h-[2px] w-7 rounded transform transition-all duration-500"></div>
         <div class="bg-custom-50 h-[2px] w-7 transform transition-all duration-500"
-             x-bind:class="open ? 'rotate-45 -translate-x-1' : ''"></div>
+             x-bind:class="open ? '-rotate-45 -translate-x-1' : ''"></div>
       </div>
     </div>
   </button>
@@ -154,6 +154,9 @@ https://tailwindcomponents.com/component/animated-hamburger-menu-icon
         </li>
         <li class="ml-5 animate-slide-in-left7" x-show="mobile_about_drop" x-transition x-transition:leave.duration.300ms x-bind:class="{'animate-slide-out-left7': !mobile_about_drop}">
           <%=link_to "WINGMAN COURSE", wingman_path, data: { turbo: false }%>
+        </li>
+        <li class="ml-5 animate-slide-in-left7" x-show="mobile_about_drop" x-transition x-transition:leave.duration.300ms x-bind:class="{'animate-slide-out-left7': !mobile_about_drop}">
+          <%=link_to "SEA PLANE COURSE", seaplane_path, data: { turbo: false }%>
         </li>
       <li>
         <div class="flex flex-row justify-between" >
